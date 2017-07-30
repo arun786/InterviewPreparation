@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Created by Adwiti on 7/30/2017.
  */
-public class MapFundasForIteratingAMap {
+public class MapFundasForIteratingAndRemovingAMap {
     public static void main(String[] args) {
 
         Map<String, String> mapOfStrings = new HashMap<String, String>();
