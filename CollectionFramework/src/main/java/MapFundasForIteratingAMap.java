@@ -17,6 +17,9 @@ public class MapFundasForIteratingAMap {
 
         IterateHashMapUsingKeySet(mapOfStrings);
         IterateHashMapUsingEntrySet(mapOfStrings);
+        IterateMapUsingJava8(mapOfStrings);
+        removeAKeyWhileIteratingAMapUsingJava8(mapOfStrings);
+        removeValuesWhileIteratingAMapUsingJava8(mapOfStrings);
         removeAkeyWhileIteratingAMap(mapOfStrings);
     }
 
@@ -41,13 +44,30 @@ public class MapFundasForIteratingAMap {
         }
     }
 
+    public static void IterateMapUsingJava8(Map<String, String> mapOfStrings) {
+        System.out.println("Iterate using java 8 for each loop...");
+        mapOfStrings.forEach((k, v) -> {
+            System.out.println(k + " : " + v);
+        });
+    }
+
+    public static void removeAKeyWhileIteratingAMapUsingJava8(Map<String, String> mapOfStrings) {
+        System.out.println("Removing a key while iterating in java 8...");
+        mapOfStrings.entrySet().removeIf(entry -> entry.getKey().equalsIgnoreCase("1"));
+    }
+
+    public static void removeValuesWhileIteratingAMapUsingJava8(Map<String, String> mapOfStrings) {
+        System.out.println("Removing a value while iterating in java 8...");
+        mapOfStrings.entrySet().removeIf(entry -> entry.getValue().equalsIgnoreCase("two"));
+    }
+
     public static void removeAkeyWhileIteratingAMap(Map<String, String> mapOfStrings) {
         System.out.println("Iterating and removing from a map");
         Set<Map.Entry<String, String>> entries = mapOfStrings.entrySet();
         Iterator<Map.Entry<String, String>> iter = entries.iterator();
 
         while (iter.hasNext()) {
-            Map.Entry<String,String> entry = iter.next();
+            Map.Entry<String, String> entry = iter.next();
             System.out.println(entry.getKey() + " : " + entry.getValue());
             iter.remove();
         }
