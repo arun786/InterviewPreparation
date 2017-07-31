@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by Adwiti on 7/30/2017.
@@ -54,4 +51,5 @@ public class MapFundasForSortingAMapByKeyBeforeJava8 {
         sortedMap.putAll(unsortedMap);
         return sortedMap;
     }
+
 }
