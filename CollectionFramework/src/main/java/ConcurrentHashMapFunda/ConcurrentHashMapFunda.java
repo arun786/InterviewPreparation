@@ -38,6 +38,15 @@ public class ConcurrentHashMapFunda {
         cricketersWithRun.entrySet().removeIf(entry -> entry.getValue().equals(10000));
         cricketersWithRun.forEach((k, v) -> System.out.println(k + "-" + v));
 
+        //to update a value in concurrent hash map
+        Integer oldValue;
+        Integer newValue;
+        do {
+            oldValue = cricketersWithRun.get("Sourav");
+            newValue = oldValue == null ? 10000 : oldValue + 500;
+        } while (!cricketersWithRun.replace("Sourav", oldValue, newValue));
+
+        System.out.println(cricketersWithRun);
 
     }
 
