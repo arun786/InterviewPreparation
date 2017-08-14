@@ -15,7 +15,12 @@ public class PredicateExplained {
         System.out.println("Green Apple");
         filterApple(lstApple, Apple::isGreen).forEach(v -> System.out.println(v));
         System.out.println("Heavy Apple");
-        filterApple(lstApple,Apple :: isHeavyApple).forEach(v-> System.out.println(v));
+        filterApple(lstApple, Apple::isHeavyApple).forEach(v -> System.out.println(v));
+
+        /*other way*/
+        System.out.println("Blue Apple using Lambda");
+        filterApple(lstApple, (a) -> "blue".equalsIgnoreCase(a.getColor())).forEach(v -> System.out.println(v));
+
     }
 
     public static List<Apple> filterApple(List<Apple> lstOfApples, Predicate<Apple> p) {
